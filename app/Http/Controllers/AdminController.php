@@ -10,7 +10,7 @@ class AdminController extends Controller
     function index(){
         // echo "atmin datanggggggggg";
         // echo "<h1>" . Auth::user()->name . "</h1>";
-        return view('home');
+        return view('h-admin');
         
     }
 }
