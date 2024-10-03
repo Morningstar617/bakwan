@@ -11,6 +11,7 @@ class SesiController extends Controller
     {
         return view('login');
     }
+
     function login(Request $request){
         $request->validate([
             'uid'=>'required',
@@ -26,9 +27,9 @@ class SesiController extends Controller
         ];
 
         if(Auth::attempt($infologin)){
-            return redirect('/admin');
+            return redirect('admin.h-admin');
         }else{
-            return redirect('')->withErrors('email dan password yang dimasukkan tidak sesuai')->withInput();
+            return redirect('login')->withErrors('email dan password yang dimasukkan tidak sesuai')->withInput();
         }
     }
 }

@@ -27,7 +27,7 @@
             </div>
 
         @endif
-        <div class="w-1/5 h-24 mx-auto mt-24 lg:mt-10">
+        <div class="w-1/5 h-24 mx-auto mt-20 lg:mt-10">
             <img src="img/logo-uin.png" alt="primary-logo" class="w-20 mx-auto pt-1 lg:w-28">
         </div>
         <div class="w-5/6 h-80 bg-slate-200 mx-auto mt-5 shadow-lg rounded-sm lg:w-2/5 lg:h-[24rem] lg:mt-16 ">
@@ -36,10 +36,6 @@
             </div>
             <form action="" method="post" class="w-11/12 mx-auto h-56 mt-4 lg:mt-4">
                 @csrf
-                {{-- Input NIM
-                <input type="text" id="nim" name="nim" placeholder="Masukkan NIM" 
-                class="w-full text-base px-3 py-3 rounded-sm lg:py-4 lg:text-xl"> --}}
-
                 {{-- Input NIM --}}
                 <input type="text" value="{{ old('uid') }}" id="uid" name="uid"
                     placeholder="Masukkan uid" class="w-full text-base px-3 py-3 rounded-sm lg:py-4 lg:text-xl">

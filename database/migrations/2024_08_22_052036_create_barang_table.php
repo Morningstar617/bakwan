@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 return new class extends Migration
 {
     /**
@@ -11,11 +12,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id('uid')->primary();
-            $table->string('name');
-            $table->string('password');
-            $table->enum('role', ['admin','mahasiswa','dosen','univ']);
+        Schema::create('barang', function (Blueprint $table) {
+            $table->id('kode_barang')->primary();
+            $table->string('nama_barang');
+            $table->string('deskripsi_barang');
+            $table->integer('jumlah_barang');
+            $table->boolean('active')->default(0);
             $table->timestamps();
         });
     }
@@ -25,5 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('barang');
     }
 };
