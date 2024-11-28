@@ -2,15 +2,44 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    function index(){
-        // echo "atmin datanggggggggg";
-        // echo "<h1>" . Auth::user()->name . "</h1>";
-        return view('h-admin');
-        
+    function index()
+    {
+        return view('admin.h-admin');
+    }
+
+    public function login()
+    {
+        return view('login');
+    }
+
+    //admin create new account for (mahasiswa,dosen and univ) controller 
+    public function create()
+    {
+        return view('make-account-admin');
+    }
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'uid' => 'required|string|max:255',
+            'password' => 'required|string|max:255',
+            'role' => 'required|in:univ,dosen,mahasiswa',
+        ]);
+
+        $users = User::create([
+            'name' => $request->name,
+            'uid' => $request->uid,
+            'password' => $request->password,
+            'role' => $request->role,
+        ]);
+        $transaksi = Transaksi::all();
+        return view('admin.h-admin', compact('transaksi'));
     }
 }

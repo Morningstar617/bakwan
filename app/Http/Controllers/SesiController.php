@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
+use App\Models\Transaksi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SesiController extends Controller
 {
@@ -11,11 +12,13 @@ class SesiController extends Controller
     {
         return view('login');
     }
-    function login(Request $request){
+
+    function login(Request $request)
+    {
         $request->validate([
-            'uid'=>'required',
-            'password'=>'required',
-        ],[
+            'uid' => 'required',
+            'password' => 'required',
+        ], [
             'uid.required' => 'uid wajib diisi',
             'password.required' => 'password wajib diisi',
         ]);
@@ -25,10 +28,17 @@ class SesiController extends Controller
             'password' => $request->password,
         ];
 
-        if(Auth::attempt($infologin)){
-            return redirect('/admin');
-        }else{
-            return redirect('')->withErrors('email dan password yang dimasukkan tidak sesuai')->withInput();
+        if (Auth::attempt($infologin)) {
+            $transaksi = Transaksi::all();
+            return view('admin.h-admin', compact('transaksi'));
+        } else {
+            return redirect()->route('login.tampil')->withErrors('email dan password yang dimasukkan tidak sesuai')->withInput();
         }
+    }
+
+    function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login.tampil');
     }
 }
