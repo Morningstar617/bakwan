@@ -36,7 +36,10 @@
             </div>
             <form action="" method="post" class="w-11/12 mx-auto h-56 mt-4 lg:mt-4">
                 @csrf
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5ceee63523c621d4d6a35481391a31bae819c5b9
                 {{-- Input NIM --}}
                 <input type="text" value="{{ old('uid') }}" id="uid" name="uid"
                     placeholder="Masukkan uid" class="w-full text-base px-3 py-3 rounded-sm lg:py-4 lg:text-xl">

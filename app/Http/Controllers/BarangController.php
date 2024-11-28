@@ -24,6 +24,7 @@ class BarangController extends Controller
             'deskripsi' => 'required|max:225|string',
             'jumlah' => 'required|max:225|integer',
             'active' => 'sometimes',
+<<<<<<< HEAD
             'yakin' => 'accepted',
         ], [
             'yakin.accepted' => 'Anda harus mencentang checkbox untuk melanjutkan.',
@@ -33,6 +34,14 @@ class BarangController extends Controller
 
         BarangModels::create([
             'kode_barang' => $kode_barang,
+=======
+            'yakin' => 'accepted', 
+        ], [
+            'yakin.accepted' => 'Anda harus mencentang checkbox untuk melanjutkan.', 
+        ]);
+
+        BarangModels::create([
+>>>>>>> 5ceee63523c621d4d6a35481391a31bae819c5b9
             'nama_barang' => $request->nama,
             'deskripsi_barang' => $request->deskripsi,
             'jumlah_barang' => $request->jumlah,

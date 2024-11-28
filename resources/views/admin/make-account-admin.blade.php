@@ -23,7 +23,11 @@
 
     <header class="bg-white shadow flex">
         <div class="py-7 pl-9 lg:pl-20">
+<<<<<<< HEAD
             <a href="{{ route('admin.h-admin') }}"
+=======
+            <a href="{{ route('h-admin') }}"
+>>>>>>> 5ceee63523c621d4d6a35481391a31bae819c5b9
             class="py-2 px-4 bg-slate-700 rounded-md text-white font-semibold hover:bg-slate-800 transition duration-300">Back</a>
         </div>
         <div class="max-w-7xl py-6 pl-8 lg:pl-[26.5rem]">
@@ -71,8 +75,13 @@
                     <p class="pl-1 text-base font-light">Mahasiswa</p>
                 </span>
             </div>
+<<<<<<< HEAD
             <div class="mt-8 text-center">
                 <button class="w-3/5 mx-auto py-1 text-center rounded-md bg-slate-700 text-lg font-semibold text-white tracking-wide">Submit</button>
+=======
+            <div class="mt-8 w-3/5 mx-auto py-1 text-center rounded-md bg-slate-700">
+                <button class="text-lg font-semibold text-white tracking-wide">Submit</button>
+>>>>>>> 5ceee63523c621d4d6a35481391a31bae819c5b9
             </div>
 
         </form>

@@ -13,7 +13,10 @@
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<<<<<<< HEAD
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+=======
+>>>>>>> 5ceee63523c621d4d6a35481391a31bae819c5b9
 </head>
 
 <body>
@@ -22,7 +25,11 @@
 
     <header class="bg-white shadow">
         <div class="mx-auto max-w-full px-8 py-6 flex gap-5 lg:ml-16 lg:mr-12">
+<<<<<<< HEAD
             <a href="{{ route('admin.h-admin') }}"
+=======
+            <a href="{{ route('h-admin') }}"
+>>>>>>> 5ceee63523c621d4d6a35481391a31bae819c5b9
                 class="py-2 px-4 mr-10 bg-slate-700 rounded-md text-white font-semibold hover:bg-slate-800 transition duration-300">Back</a>
             <div class="lg:mx-auto mr-8">
                 <h1 class="text-2xl font-bold tracking-wide text-gray-900 mt-1 lg:text-3xl">List Barang</h1>
@@ -41,6 +48,7 @@
                 <th class="px-1 py-1 lg:px-4 lg:py-2">Nama Barang</th>
                 <th class="px-1 py-1 lg:px-4 lg:py-2">Deskripsi Barang</th>
                 <th class="px-1 py-1 lg:px-4 lg:py-2">Jumlah <br> Barang</th>
+<<<<<<< HEAD
                 <th class="px-10 py-1 lg:px-28 lg:py-2">Aksi</th>
             </tr>
             @foreach ($barang as $item)
@@ -64,6 +72,30 @@
                                 <button type="submit"
                                     class="bg-red-700 text-white font-semibold rounded-md px-4 py-1 hover:bg-red-800 transition duration-300">
                                     Delete
+=======
+                <th class="px-10 py-1 lg:px-28 lg:py-2">Aksi</th> <!-- Kolom untuk aksi -->
+            </tr>
+            @foreach ($barang as $item)
+                <tr class="text-center text-sm lg:text-xl font-semibold border-t border-b border-gray-300">
+                    <td class="py-3 border-l border-gray-300">{{ $item->kode_barang }}</td>
+                    <td class="py-3 border-l border-gray-300">{{ $item->nama_barang }}</td>
+                    <td class="py-3 border-l border-gray-300 max-w-[6ch] whitespace-normal break-words">
+                        {{ $item->deskripsi_barang }}</td>
+                    <td class="py-3 border-l border-gray-300">{{ $item->jumlah_barang }}</td>
+                    <td class="py-3 border-l border-r border-gray-300">
+                        <div class="block lg:flex justify-center gap-6">
+                            <!-- Tombol Edit -->
+                            <a href="{{ route('tabel.edit', $item->kode_barang) }}"
+                                class="bg-slate-700 text-white font-semibold rounded-md px-6 py-1 hover:bg-slate-800 transition duration-300">Edit
+                            </a>
+
+                            <!-- Tombol Delete -->
+                            <form action="{{ route('tabel.destroy', $item->kode_barang) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit"
+                                    class="bg-red-700 text-white font-semibold rounded-md px-4 py-1 hover:bg-red-800 transition duration-300">Delete
+>>>>>>> 5ceee63523c621d4d6a35481391a31bae819c5b9
                                 </button>
                             </form>
                         </div>
@@ -73,6 +105,7 @@
         </table>
     </div>
 
+<<<<<<< HEAD
     <script>
         document.querySelectorAll('.delete-data').forEach((form) => {
             form.addEventListener('submit', function(e) {
@@ -99,6 +132,8 @@
     </script>
 
 
+=======
+>>>>>>> 5ceee63523c621d4d6a35481391a31bae819c5b9
 
 
 </body>

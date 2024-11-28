@@ -30,7 +30,11 @@
             class="bg-slate-700 py-2 px-8 text-white text-base font-semibold rounded-md hover:bg-slate-800 transition duration-300">Back</a>
     </div>
 
+<<<<<<< HEAD
     <form action="{{ route('tabel.update', $barang->id) }}" method="POST"
+=======
+    <form action="{{ route('tabel.update', $barang->kode_barang) }}" method="POST"
+>>>>>>> 5ceee63523c621d4d6a35481391a31bae819c5b9
         class="mt-14 mb-32 mx-7 bg-slate-200 pb-7 pt-6 px-5 h-[15.5rem] shadow-lg rounded-lg lg:w-1/3 lg:ml-16">
         @csrf
         @method('PUT')  

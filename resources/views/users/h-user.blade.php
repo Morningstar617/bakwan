@@ -19,11 +19,19 @@
 <body class="select-none">
     <x-navbar></x-navbar>
 
+<<<<<<< HEAD
     <header class="bg-white shadow">
         <div class="mx-auto max-w-7xl px-8 py-6 text-center sm:px-6 lg:text-center">
             <h1 class="text-3xl font-semibold tracking-wide text-slate-700">Pinjamin.</h1>
         </div>
     </header>
+=======
+    {{-- <header class="bg-white shadow">
+        <div class="mx-auto max-w-7xl px-8 py-6 text-center sm:px-6 lg:text-center">
+            <h1 class="text-3xl font-semibold tracking-wide text-slate-700">Pinjamin.</h1>
+        </div>
+    </header> --}}
+>>>>>>> 5ceee63523c621d4d6a35481391a31bae819c5b9
 
     {{-- Content 1 --}}
     <div class="w-full h-[40rem] bg-slate-100 relative">
@@ -105,7 +113,11 @@
         </div>
     </div>
     <div class="border-b-[1px] mx-12 my-8"></div>
+<<<<<<< HEAD
     <div class="w-[80%] mx-auto pb-28   ">
+=======
+    <div class="w-[80%] mx-auto pb-28">
+>>>>>>> 5ceee63523c621d4d6a35481391a31bae819c5b9
         <h1 class="text-2xl tracking-wide text-gray-600 font-semibold text-center">Langkah - langkah meminjam barang di Pinjamin :
         </h1>
         <div class="space-y-7 text-left">

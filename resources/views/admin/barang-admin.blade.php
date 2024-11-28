@@ -20,16 +20,22 @@
 <body>
     <x-navbar></x-navbar>
 
+<<<<<<< HEAD
     <header class="bg-white shadow flex">
         <div class="my-7 ml-7 lg:ml-20">
             <a href="{{ route('tabel-admin') }}"
                 class="bg-slate-700 py-2 px-8 text-white text-base font-semibold rounded-md hover:bg-slate-800 transition duration-300">Back</a>
         </div>
         <div class="px-8 py-6 sm:px-6 lg:ml-[24rem] lg:text-center">
+=======
+    <header class="bg-white shadow">
+        <div class="mx-auto max-w-7xl px-8 py-6 sm:px-6 lg:text-center">
+>>>>>>> 5ceee63523c621d4d6a35481391a31bae819c5b9
             <h1 class="text-3xl font-bold tracking-tight text-gray-900">Tambah Barang</h1>
         </div>
     </header>
 
+<<<<<<< HEAD
 
     <div  class="w-full">
         <form id="BarangForm" action="{{ route('barang-admin') }}" method="post"
@@ -71,6 +77,50 @@
         </form>
     </div>
 
+=======
+    <div class="my-7 mx-7 lg:ml-16">
+        <a href="{{ route('tabel-admin') }}"
+            class="bg-slate-700 py-2 px-8 text-white text-base font-semibold rounded-md hover:bg-slate-800 transition duration-300">Back</a>
+    </div>
+
+    <form id="BarangForm" action="{{ route('barang-admin') }}" method="post"
+        class="mt-14 mb-32 mx-7 bg-slate-200 pb-7 pt-6 px-5 h-[15.5rem] shadow-lg rounded-lg lg:w-1/3 lg:ml-16">
+        @csrf
+        @if (session('status'))
+            <div class="text-slate-700 text-lg pb-1 font-semibold">{{ session('status') }}</div>
+        @endif
+        <div class="mb-4">
+            <label class="text-xl font-semibold text-slate-700 pr-2">Nama Barang</label>
+            <input type="text" name="nama" value="{{ old('nama') }}" class="w-[65%] pl-2" required>
+        </div>
+        <div class="mb-4">
+            <label class="text-xl font-semibold text-slate-700 pr-[2.85rem]">Deskripsi</label>
+            <input type="text" name="deskripsi" value="{{ old('deskripsi') }}" class="w-[65%] pl-2" required>
+        </div>
+        <div class="flex gap-10 mb-6">
+            <div>
+                <label class="text-lg font-semibold text-slate-700 pr-[0.55rem]">Jumlah barang</label>
+                <input type="number" name="jumlah" class="w-16 pl-2" required>
+            </div>
+            <div>
+                <label class="text-lg font-semibold text-slate-700 pr-2">yakin?</label>
+                <input type="checkbox" id="yakin" name="yakin" value="1">
+            </div>
+        </div>
+        <div class="flex gap-4">
+            <button type="submit"
+                class="py-1 w-[58%] bg-slate-700 text-lg text-white rounded-md hover:bg-slate-800 transition duration-300">Simpan</button>
+            <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                    class="mt-[0.15rem]" style="fill: rgba(51, 65, 85, 1);transform: ;msFilter:;">
+                    <path
+                        d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+    </form>
+>>>>>>> 5ceee63523c621d4d6a35481391a31bae819c5b9
 
     <x-footer></x-footer>
 
@@ -78,7 +128,11 @@
         document.getElementById('BarangForm').addEventListener('submit', function(event) {
             var yakinCheckbox = document.getElementById('yakin');
             if (!yakinCheckbox.checked) {
+<<<<<<< HEAD
                 event.preventDefault();
+=======
+                event.preventDefault(); 
+>>>>>>> 5ceee63523c621d4d6a35481391a31bae819c5b9
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
